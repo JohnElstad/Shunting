@@ -1,24 +1,35 @@
+#include <iostream>
 #include "Node.h"
+//holds the link to the next node as well as either a char or int
+
 using namespace std;
+//Nodes class that stores 
+Node::Node(char d){
+  next = NULL;
+  data.c = d;
+  type = 1;
 
-Node::Node(){//constructor
+}
+Node::Node(int d){
+  next = NULL;
+  data.i = d;
+  type = 2;
 
 }
-Node::~Node(){//deconstructor
-  
+
+void Node::setNext(Node* n){
+  next = n;
 }
-void Node::push(){//puts onto stack
-  
-}
-void Node::pop(){//takes off of stack
-  
-}
-char Node::peek(){//looks at top of stack
-  return op;
-}
-void Node::setNext(Node* temp){
-  next = temp;
-}
+//returns the next node
 Node* Node::getNext(){
-  return next();
+  return next;
+}
+int Node::getIntData(){
+  return data.i;
+}
+char Node::getCharData(){
+  if(type==1){
+    return data.c;
+  }
+  else return 0;
 }
