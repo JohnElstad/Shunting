@@ -5,17 +5,20 @@ Node::Node(){//constructor
 
 }
 Node::~Node(){//deconstructor
-  delete next();
+  
 }
-char Node::getOp(){//gets operator
+void Node::push(){//puts onto stack
+  
+}
+void Node::pop(){//takes off of stack
+  
+}
+char Node::peek(){//looks at top of stack
   return op;
 }
-Node::setOp(char tempOp){//sets operator
-  op=tempOp;
+void Node::setNext(Node* temp){
+  next = temp;
 }
-Node* Node::getNext(){//gets next node
-  return next;
-}
-Node::setNext(){//sets next node
-
+Node* Node::getNext(){
+  return next();
 }
